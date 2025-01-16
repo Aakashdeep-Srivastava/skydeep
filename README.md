@@ -203,7 +203,7 @@ the following endpoint will return a json object contains "quote" and "author", 
 
 MIT License
 
-Copyright (c) [2022] [Abdellatif Anaflous]
+Copyright (c) [2022] [Aakashdeep Srivastava](https://github.com/Aakashdeep-Srivastava)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -229,8 +229,8 @@ SOFTWARE.
 
 ## Author Info
 
-- Linkedin - [@abdellatif-anaflous](https://www.linkedin.com/in/abdellatif-anaflous/)
-- Website - [Abdellatif Anaflous](https://anaflous.com)
+- Linkedin - [@Aakashdeep-Srivastava]www.linkedin.com/in/aakashdeep0551)
+- Website - [Aakashdeep-Srivastava](https://skydeep.co.in)
 
 [Back To The Top](#description) :
 

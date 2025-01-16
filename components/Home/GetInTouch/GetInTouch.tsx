@@ -36,15 +36,15 @@ export default function GetInTouch() {
             className="font-mono text-sm text-AAsecondary border-AAsecondary 
                             px-8 py-4 border-[1.5px] rounded "
           >
-            abdellatif@anaflous.com
+            aakashdeep0551@gmail.com
           </button>
         ) : (
-          <a href="mailto:abdellatif@anaflous.com" target={"_blank"} rel="noreferrer">
+          <a href="mailto:aakashdeep0551@gmail.com" target={"_blank"} rel="noreferrer">
             <button
               className="font-mono text-sm text-AAsecondary border-AAsecondary 
                             px-8 py-4 border-[1.5px] rounded "
             >
-              Say Hello
+             Hire Me
             </button>
           </a>
         )}

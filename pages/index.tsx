@@ -15,28 +15,20 @@ import "aos/dist/aos.css";
 import Head from "next/head";
 import ScreenSizeDetector from "../components/CustomComponents/ScreenSizeDetector";
 import Maintenance from "../components/Home/Maintenance/Maintenance";
+
 export default function Home() {
   const [ShowElement, setShowElement] = useState(false);
   const [ShowThisCantBeReached, setShowThisCantBeReached] = useState(true);
   const [ShowMe, setShowMe] = useState(false);
-  // context Variable to clearInterval
   const context = useContext(AppContext);
   const aboutRef = useRef<HTMLDivElement>(null);
   const homeRef = useRef<HTMLDivElement>(null);
-
-  // userData state that will be used to get usr location
   const [userData, setUserData] = useState(null);
-
-  // check if user from Black List
   const [isBlackListed, setIsBlackListed] = useState(false);
-
-  // check if NEXT_PUBLC_BLACKLIST_COUNTRIES is empty
   const [IsBlackListEmpty, setIsBlackListEmpty] = useState(
     process.env.NEXT_PUBLIC_BLACKLIST_COUNTRIES === "" ? true : false
   );
 
-  // this userEffect will be called to get the user location, so we can check if he is from the blackList,
-  // this will only run if NEXT_PUBLIC_BLACKLIST_COUNTRIES is not empty
   useEffect(() => {
     if (!IsBlackListEmpty) {
       const fetchData = async () => {
@@ -47,27 +39,22 @@ export default function Home() {
               .then(data => data.ip);
           };
 
-          const response = await fetch("/api/userInfoByIP/" + (await IP_Address())); // Replace with your actual API endpoint
+          const response = await fetch("/api/userInfoByIP/" + (await IP_Address()));
           const data = await response.json();
           setUserData(data);
         } catch (error) {
           console.error("Error fetching data location and ip address:", error);
-          // Handle errors as needed
         }
       };
 
       fetchData();
     }
-  }, [IsBlackListEmpty]); // Empty dependency array ensures that this effect runs once when the component mounts
+  }, [IsBlackListEmpty]);
 
-  // this useEffect will be called when userData is set
   useEffect(() => {
-    // this will only run if NEXT_PUBLIC_BLACKLIST_COUNTRIES is not empty
     if (!IsBlackListEmpty) {
       if (userData) {
-        // check if the user country is in the blackList
         if (process.env.NEXT_PUBLIC_BLACKLIST_COUNTRIES.includes(userData.country)) {
-          // set isBlackListed to true
           setIsBlackListed(true);
         }
       }
@@ -75,13 +62,10 @@ export default function Home() {
   }, [IsBlackListEmpty, userData]);
 
   useEffect(() => {
-    // remove the interval Cookie timer setter when
     clearInterval(context.sharedState.userdata.timerCookieRef.current);
     if (typeof window !== "undefined") {
-      // remove UserDataPuller project EventListeners
       window.removeEventListener("resize", context.sharedState.userdata.windowSizeTracker.current);
       window.removeEventListener("mousemove", context.sharedState.userdata.mousePositionTracker.current, false);
-      // remove Typing project EventListeners
       window.removeEventListener("resize", context.sharedState.typing.eventInputLostFocus);
       document.removeEventListener("keydown", context.sharedState.typing.keyboardEvent);
     }
@@ -92,7 +76,7 @@ export default function Home() {
     setTimeout(() => {
       setShowThisCantBeReached(false);
     }, 5400);
-    // ? INFORMATIONAL next function will show the component after changing the state of ShowMe
+
     setTimeout(() => {
       setShowElement(false);
       setShowMe(true);
@@ -105,11 +89,10 @@ export default function Home() {
     Aos.init({ duration: 2000, once: true });
   }, []);
 
-  console.log("website is rendering...");
   const meta = {
-    title: "Abdellatif Anaflous - Software Engineer",
-    description: `I've been working on Software development for 5 years straight. Get in touch with me to know more.`,
-    image: "/titofCercle.png",
+    title: "Aakashdeep Srivastava - AI Engineer",
+    description: `AI Engineer with expertise in MLOps, LLMs, and innovative machine learning solutions. Winner of multiple hackathons and experienced in leading technical teams.`,
+    image: "/profile-image.png", // Make sure to add your profile image
     type: "website",
   };
   const isProd = process.env.NODE_ENV === "production";
@@ -120,15 +103,15 @@ export default function Home() {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`https://anaflous.com`} />
-        <link rel="canonical" href={`https://anaflous.com`} />
+        <meta property="og:url" content={`https://aakashdeep.dev`} /> {/* Update with your domain */}
+        <link rel="canonical" href={`https://aakashdeep.dev`} /> {/* Update with your domain */}
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Manu Arora" />
+        <meta property="og:site_name" content="Aakashdeep Srivastava" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@titofabdo" />
+        <meta name="twitter:site" content="@yourtwitterhandle" /> {/* Update with your Twitter handle */}
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
@@ -146,7 +129,7 @@ export default function Home() {
           {context.sharedState.finishedLoading ? <SomethingIveBuilt /> : <></>}
           {context.sharedState.finishedLoading ? <GetInTouch /> : <></>}
           {context.sharedState.finishedLoading ? (
-            <Footer githubUrl={"https://github.com/hktitof/my-website"} hideSocialsInDesktop={true} />
+            <Footer githubUrl={"https://github.com/Aakashdeep-Srivastava"} hideSocialsInDesktop={true} />
           ) : (
             <></>
           )}
