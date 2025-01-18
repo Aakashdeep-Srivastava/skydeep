@@ -25,7 +25,7 @@ export default function AboutMe() {
               Hello! My name is Aakashdeep, and I&apos;m a passionate{" "}
               <span className="text-[#64ffda]">AI Engineer</span> with a creative twist. 
               My journey began with a{" "}
-              <span className="text-[#64ffda]">Bachelor's in Mechanical Engineering</span> at 
+              <span className="text-[#64ffda]">Bachelor&apos;s in Mechanical Engineering</span> at 
               ITGGU, where I learned to blend analytical thinking with creative problem-solving. 
               This unique perspective led me to pursue a parallel degree in{" "}
               <span className="text-[#64ffda]">Data Science at IIT Madras</span>, where I 
@@ -37,7 +37,7 @@ export default function AboutMe() {
               <span className="text-[#64ffda]">100+ hackathons</span>, turning complex 
               challenges into innovative solutions. As the{" "}
               <span className="text-[#64ffda]">Design Head</span> for our departmental 
-              newsletter, I've led a creative team in crafting compelling visual narratives. 
+              newsletter, I&apos;ve led a creative team in crafting compelling visual narratives. 
               My role as Corporate Executive at IIT Madras allowed me to secure{" "}
               <span className="text-[#64ffda]">₹5 Lakhs in sponsorships</span> while 
               organizing <span className="text-[#64ffda]">18 successful hackathons</span> for 
