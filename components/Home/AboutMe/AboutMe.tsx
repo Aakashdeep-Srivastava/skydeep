@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function AboutMe() {
   const technologies = [
@@ -21,7 +22,7 @@ export default function AboutMe() {
           {/* Text Content */}
           <div className="md:w-2/3 space-y-6 text-gray-400">
             <p className="text-lg">
-              Hello! My name is Aakashdeep, and I'm a passionate{" "}
+              Hello! My name is Aakashdeep, and I&apos;m a passionate{" "}
               <span className="text-[#64ffda]">AI Engineer</span> with a creative twist. 
               My journey began with a{" "}
               <span className="text-[#64ffda]">Bachelor's in Mechanical Engineering</span> at 
@@ -32,20 +33,20 @@ export default function AboutMe() {
             </p>
             
             <p className="text-lg">
-              Beyond the code, I'm an avid hackathon enthusiast who has participated in{" "}
+              Beyond the code, I&apos;m an avid hackathon enthusiast who has participated in{" "}
               <span className="text-[#64ffda]">100+ hackathons</span>, turning complex 
               challenges into innovative solutions. As the{" "}
               <span className="text-[#64ffda]">Design Head</span> for our departmental 
               newsletter, I've led a creative team in crafting compelling visual narratives. 
-              My role as Super Coordinator at IIT Madras allowed me to secure{" "}
+              My role as Corporate Executive at IIT Madras allowed me to secure{" "}
               <span className="text-[#64ffda]">₹5 Lakhs in sponsorships</span> while 
               organizing <span className="text-[#64ffda]">18 successful hackathons</span> for 
-              Paradox'23.
+              Paradox&apos;23.
             </p>
 
             <p className="text-lg mb-8">
               I believe in creating technology that combines creativity with functionality. 
-              Here are some of the technologies I've been working with:
+              Here are some of the technologies I&apos;ve been working with:
             </p>
 
             {/* Technologies Grid */}
@@ -73,11 +74,12 @@ export default function AboutMe() {
               
               {/* Image Wrapper */}
               <div className="relative rounded overflow-hidden aspect-square">
-                <img
+                <Image
                   src="/images/sky.jpg"
                   alt="Profile Image"
-                  className="w-full h-full object-cover rounded transition-opacity duration-300 
-                           group-hover:opacity-80"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded transition-opacity duration-300 group-hover:opacity-80"
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-[#64ffda] opacity-20 transition-opacity 

@@ -56,11 +56,11 @@ export default function MyName(props: { finishedLoading: boolean }) {
         <br className="3xl:block hidden" /> With expertise in both{" "}
         <span className="text-AAsecondary">MLOps</span> and{" "}
         <span className="text-AAsecondary">large language models</span>, I work with cutting-edge technologies including{" "}
-        <span className="text-AAsecondary">PEFT fine-tuning</span>
+        <span className="text-AAsecondary">fine-tuning</span>
         <br className="3xl:block hidden" /> and real-time multi-modal applications. As an avid hackathon participant with{" "}
         <span className="text-AAsecondary">100+ competitions</span> under my belt,
         <br className="3xl:block hidden" /> I thrive on turning complex challenges into impactful solutions. My experience as{" "}
-        <span className="text-AAsecondary">Super Coordinator at IIT Madras</span>
+        <span className="text-AAsecondary">Corporate Executive at IIT Madras</span>
         <br className="3xl:block hidden" /> has sharpened my ability to lead teams and deliver exceptional results. I am excited to push 
         the boundaries of artificial intelligence.
       </motion.h3>
