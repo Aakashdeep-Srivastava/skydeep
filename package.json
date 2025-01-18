@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "apt-get update && apt-get install -y libssl1.1"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.12.1",
@@ -48,5 +49,6 @@
   },
   "engines": {
     "node": ">=18.x"
-  }
+}
+
 }
