@@ -14,7 +14,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
 import ScreenSizeDetector from "../components/CustomComponents/ScreenSizeDetector";
-import Maintenance from "../components/Home/Maintenance/Maintenance";
 
 export default function Home() {
   const [ShowElement, setShowElement] = useState(false);
@@ -23,43 +22,6 @@ export default function Home() {
   const context = useContext(AppContext);
   const aboutRef = useRef<HTMLDivElement>(null);
   const homeRef = useRef<HTMLDivElement>(null);
-  const [userData, setUserData] = useState(null);
-  const [isBlackListed, setIsBlackListed] = useState(false);
-  const [IsBlackListEmpty, setIsBlackListEmpty] = useState(
-    process.env.NEXT_PUBLIC_BLACKLIST_COUNTRIES === "" ? true : false
-  );
-
-  useEffect(() => {
-    if (!IsBlackListEmpty) {
-      const fetchData = async () => {
-        try {
-          const IP_Address = async () => {
-            return fetch("https://api.ipify.org/?format=json")
-              .then(res => res.json())
-              .then(data => data.ip);
-          };
-
-          const response = await fetch("/api/userInfoByIP/" + (await IP_Address()));
-          const data = await response.json();
-          setUserData(data);
-        } catch (error) {
-          console.error("Error fetching data location and ip address:", error);
-        }
-      };
-
-      fetchData();
-    }
-  }, [IsBlackListEmpty]);
-
-  useEffect(() => {
-    if (!IsBlackListEmpty) {
-      if (userData) {
-        if (process.env.NEXT_PUBLIC_BLACKLIST_COUNTRIES.includes(userData.country)) {
-          setIsBlackListed(true);
-        }
-      }
-    }
-  }, [IsBlackListEmpty, userData]);
 
   useEffect(() => {
     clearInterval(context.sharedState.userdata.timerCookieRef.current);
@@ -92,7 +54,7 @@ export default function Home() {
   const meta = {
     title: "Aakashdeep Srivastava - AI Engineer",
     description: `AI Engineer with expertise in MLOps, LLMs, and innovative machine learning solutions. Winner of multiple hackathons and experienced in leading technical teams.`,
-    image: "/profile-image.png", // Make sure to add your profile image
+    image: "/profile-image.png",
     type: "website",
   };
   const isProd = process.env.NODE_ENV === "production";
@@ -103,41 +65,37 @@ export default function Home() {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`https://aakashdeep.dev`} /> {/* Update with your domain */}
-        <link rel="canonical" href={`https://aakashdeep.dev`} /> {/* Update with your domain */}
+        <meta property="og:url" content={`https://aakashdeep.dev`} />
+        <link rel="canonical" href={`https://aakashdeep.dev`} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Aakashdeep Srivastava" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@yourtwitterhandle" /> {/* Update with your Twitter handle */}
+        <meta name="twitter:site" content="@yourtwitterhandle" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
 
-      {!isBlackListed ? (
-        <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full ">
-          {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
-          {context.sharedState.finishedLoading ? <></> : ShowElement ? <Startup /> : <></>}
-          <Header finishedLoading={context.sharedState.finishedLoading} sectionsRef={homeRef} />
-          <MyName finishedLoading={context.sharedState.finishedLoading} />
-          <SocialMediaArround finishedLoading={context.sharedState.finishedLoading} />
-          {context.sharedState.finishedLoading ? <AboutMe  /> : <></>}
-          {context.sharedState.finishedLoading ? <WhereIHaveWorked /> : <></>}
-          {context.sharedState.finishedLoading ? <SomethingIveBuilt /> : <></>}
-          {context.sharedState.finishedLoading ? <GetInTouch /> : <></>}
-          {context.sharedState.finishedLoading ? (
-            <Footer githubUrl={"https://github.com/Aakashdeep-Srivastava"} hideSocialsInDesktop={true} />
-          ) : (
-            <></>
-          )}
-          {!isProd && <ScreenSizeDetector />}
-        </div>
-      ) : (
-        <Maintenance />
-      )}
+      <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full ">
+        {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
+        {context.sharedState.finishedLoading ? <></> : ShowElement ? <Startup /> : <></>}
+        <Header finishedLoading={context.sharedState.finishedLoading} sectionsRef={homeRef} />
+        <MyName finishedLoading={context.sharedState.finishedLoading} />
+        <SocialMediaArround finishedLoading={context.sharedState.finishedLoading} />
+        {context.sharedState.finishedLoading ? <AboutMe  /> : <></>}
+        {context.sharedState.finishedLoading ? <WhereIHaveWorked /> : <></>}
+        {context.sharedState.finishedLoading ? <SomethingIveBuilt /> : <></>}
+        {context.sharedState.finishedLoading ? <GetInTouch /> : <></>}
+        {context.sharedState.finishedLoading ? (
+          <Footer githubUrl={"https://github.com/Aakashdeep-Srivastava"} hideSocialsInDesktop={true} />
+        ) : (
+          <></>
+        )}
+        {!isProd && <ScreenSizeDetector />}
+      </div>
     </>
   );
 }
