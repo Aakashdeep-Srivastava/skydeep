@@ -26,7 +26,7 @@ export default function Fotter(props:{link:string,className:string}) {
             Icon={GithubIcon}
           />
           <ClickableIcon
-            href={"www.linkedin.com/in/aakashdeep0551"}
+            href={"https://www.linkedin.com/in/aakashdeep0551"}
             Icon={LinkedinIcon}
           />
           <ClickableIcon

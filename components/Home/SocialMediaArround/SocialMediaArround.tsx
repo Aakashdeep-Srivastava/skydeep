@@ -34,7 +34,7 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
             {/* Github Icon */}
             <IconClickableWithAnimation Icon={GithubIcon} href={"https://github.com/Aakashdeep-Srivastava"} />
             {/* Linkedin icon */}
-            <IconClickableWithAnimation Icon={LinkedinIcon} href={"www.linkedin.com/in/aakashdeep0551"} />
+            <IconClickableWithAnimation Icon={LinkedinIcon} href={"https://www.linkedin.com/in/aakashdeep0551"} />
             {/* Instagram Icon */}
             { <IconClickableWithAnimation Icon={InstagramIcon} href={"https://www.instagram.com/aakash.deep.1/"} /> }
             {/* Youtube Icon */}
