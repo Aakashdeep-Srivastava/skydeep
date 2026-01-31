@@ -1,11 +1,27 @@
 export type ActiveWordWithIndex = {
-    wordIndex: number;
-    wordDetail: {
-      word: ReturnType<() => string>;
-      indexFrom: number;
-      indexTo: number;
-    };
+  wordIndex: number;
+  wordDetail: {
+    word: string;
+    indexFrom: number;
+    indexTo: number;
   };
-  export type Data = [wordsStatus, [{ char: string; charColor: string }?], { CursorPosition: number }];
-  export type wordsStatus = [{ word: string; indexFrom: number; indexTo: number }?];
-  export type Statistics = [{ round: number; wpm: number; accuracy: number }?];
+} | null;
+
+export interface CharStatus {
+  char: string;
+  charColor: string;
+}
+
+export interface WordStatus {
+  word: string;
+  indexFrom: number;
+  indexTo: number;
+}
+
+export interface CursorState {
+  CursorPosition: number;
+}
+
+export type Data = [WordStatus[], CharStatus[], CursorState];
+export type wordsStatus = WordStatus[];
+export type Statistics = { round: number; wpm: number; accuracy: number }[];

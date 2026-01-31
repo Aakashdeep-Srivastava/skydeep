@@ -1,6 +1,10 @@
-const GithubIcon = props => {
+interface GithubIconProps {
+  link?: string;
+}
+
+const GithubIcon = ({ link }: GithubIconProps) => {
     return (
-      <a href={props.link} target="_blank" rel="noreferrer">
+      <a href={link} target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           role="img"
@@ -10,7 +14,7 @@ const GithubIcon = props => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-6 h-6 text-gray-300 hover:text-AAsecondary hover:cursor-pointer 
+          className="w-6 h-6 text-theme-primary hover:text-AAsecondary hover:cursor-pointer 
    transition ease-in-out delay-50 hover:-translate-y-1 
   hover:scale-110 duration-200"
         >

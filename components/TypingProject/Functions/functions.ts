@@ -104,9 +104,10 @@ export const handleOnChangeInput = (
   myText:Data,
   setMyText:React.Dispatch<React.SetStateAction<Data>>,
   setIsFinished:React.Dispatch<React.SetStateAction<boolean>>,
-  timerCountingInterval:React.MutableRefObject<undefined>,
+  timerCountingInterval:React.RefObject<ReturnType<typeof setInterval> | null>,
   updateStatistics:() => void,
 ) => {
+  if (!activeWordWithIndex) return;
   /**
    * @nextForLoop
    * this for loop to give the char its default color back, starting from activeWord first char index
@@ -155,6 +156,8 @@ export const handleOnChangeInput = (
     myText[1] = [];
     setMyText([...myText]);
     setIsFinished(true);
-    clearInterval(timerCountingInterval.current); // stop the timer
+    if (timerCountingInterval.current) {
+      clearInterval(timerCountingInterval.current); // stop the timer
+    }
   }
 };

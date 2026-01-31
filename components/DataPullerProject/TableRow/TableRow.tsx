@@ -1,6 +1,7 @@
 import React from "react";
+
 type Props = {
-  item: { title; value };
+  item: { title: string; value: string };
 };
 // repeated  table row code for setting General Information ip address,city,Zip Code ...etc
 export default function TableRow(props:Props) {

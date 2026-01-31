@@ -1,0 +1,8 @@
+{
+  "id": "2024-01-15-learning-rust-memory-management",
+  "title": "Learning Rust Memory Management",
+  "content": "Today I explored Rust's unique ownership and borrowing system. It's fascinating how the compiler ensures memory safety at compile time without a garbage collector.\n\n## Key Concepts\n\n**Ownership Rules:**\n1. Each value has an owner\n2. There can only be one owner at a time\n3. When the owner goes out of scope, the value is dropped\n\n**Borrowing:**\n- You can have either one mutable reference OR any number of immutable references\n- References must always be valid\n\n## Example\n\n```rust\nfn main() {\n    let s1 = String::from(\"hello\");\n    let s2 = &s1; // Immutable borrow\n    println!(\"{} {}\", s1, s2);\n}\n```\n\nThis mental model takes time to internalize, but once it clicks, you can write incredibly safe and performant code.",
+  "excerpt": "Today I explored Rust's unique ownership and borrowing system. It's fascinating how the compiler ensures memory safety at compile time without a garbage collector.",
+  "date": "2024-01-15T10:30:00Z",
+  "tags": ["rust", "programming", "memory"]
+}

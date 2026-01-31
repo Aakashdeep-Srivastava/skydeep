@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "id": "2024-01-15-learning-rust-memory-management",
+      "title": "Learning Rust Memory Management",
+      "date": "2024-01-15T10:30:00Z",
+      "excerpt": "Today I explored Rust's unique ownership and borrowing system. It's fascinating how the compiler ensures memory safety at compile time without a garbage collector.",
+      "tags": ["rust", "programming", "memory"]
+    },
+    {
+      "id": "2024-01-14-building-rag-pipelines",
+      "title": "Building RAG Pipelines with LangChain",
+      "date": "2024-01-14T09:00:00Z",
+      "excerpt": "Retrieval-Augmented Generation (RAG) is transforming how we build AI applications. Here's what I learned about creating efficient document retrieval pipelines.",
+      "tags": ["ai", "langchain", "rag"]
+    }
+  ]
+}

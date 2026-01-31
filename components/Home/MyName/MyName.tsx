@@ -1,9 +1,7 @@
 import React from "react";
-import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/router";
 export default function MyName(props: { finishedLoading: boolean }) {
-  const router = useRouter();
   return (
     <div
       className="h-full flex flex-col justify-center
@@ -27,7 +25,7 @@ export default function MyName(props: { finishedLoading: boolean }) {
           opacity: { delay: props.finishedLoading ? 0 : 10.5, duration: props.finishedLoading ? 0 : 0.2 },
           y: { delay: props.finishedLoading ? 0 : 10.5, duration: props.finishedLoading ? 0 : 0.2 },
         }}
-        className="text-gray-300 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
+        className="text-theme-primary font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
       >
         Aakashdeep Srivastava.
       </motion.h1>
@@ -38,7 +36,7 @@ export default function MyName(props: { finishedLoading: boolean }) {
           opacity: { delay: props.finishedLoading ? 0 : 10.6, duration: props.finishedLoading ? 0 : 0.2 },
           y: { delay: props.finishedLoading ? 0 : 10.6, duration: props.finishedLoading ? 0 : 0.2 },
         }}
-        className="text-gray-400 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
+        className="text-theme-secondary font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
       >
         I turn ideas into reality.
       </motion.h2>
@@ -49,7 +47,7 @@ export default function MyName(props: { finishedLoading: boolean }) {
           opacity: { delay: props.finishedLoading ? 0 : 10.7, duration: props.finishedLoading ? 0 : 0.2 },
           y: { delay: props.finishedLoading ? 0 : 10.7, duration: props.finishedLoading ? 0 : 0.2 },
         }}
-        className="text-gray-400 font-Header text-sm md:text-lg sm:text-md mt-10 tracking-wider"
+        className="text-theme-secondary font-Header text-sm md:text-lg sm:text-md mt-10 tracking-wider"
       >
         I&apos;m an <span className="text-AAsecondary">AI Engineer</span> with strong{" "}
         <span className="text-AAsecondary">problem-solving skills</span>, specializing in creating innovative machine learning solutions.

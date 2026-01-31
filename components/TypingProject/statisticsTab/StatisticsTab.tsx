@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Statistics } from "../Types/types";
 
 const getTopScore = (st: Statistics) => {
   if (st.length > 1) {
@@ -37,7 +38,6 @@ const isTopScore = (index: number, statistics: Statistics) => {
  
 };
 
-type Statistics = [{ round: number; wpm: number; accuracy: number }?];
 export default function StatisticsTab({
   statistics,
   round,

@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-export default function InstagramIcon(props) {
+interface IconProps {
+  className?: string;
+}
+
+export default function InstagramIcon({ className }: IconProps) {
   return (
     <svg
-    className={props.className}
+    className={className}
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"

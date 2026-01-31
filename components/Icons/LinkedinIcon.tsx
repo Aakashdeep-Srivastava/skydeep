@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-export default function LinkedinIcon(props) {
+interface IconProps {
+  className?: string;
+}
+
+export default function LinkedinIcon({ className }: IconProps) {
   return (
     <svg
-    className={props.className}
+    className={className}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 448 512"
   >

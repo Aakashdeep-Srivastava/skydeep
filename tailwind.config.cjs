@@ -1,19 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  darkMode: 'class',
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./features/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
-    rotate: {
-      "-180": "-180deg",
-      "-90": "-90deg",
-      "-45": "-45deg",
-      0: "0",
-      45: "45deg",
-      90: "90deg",
-      135: "135deg",
-      180: "180deg",
-      270: "270deg",
-    },
     extend: {
+      rotate: {
+        "-180": "-180deg",
+        "-90": "-90deg",
+        "-45": "-45deg",
+        "0": "0",
+        "45": "45deg",
+        "90": "90deg",
+        "135": "135deg",
+        "180": "180deg",
+        "270": "270deg",
+      },
       fontFamily: {
         Header: ["Lato", "sans-serif"],
         Text2: ["Lato", "sans-serif"],
@@ -21,37 +27,43 @@ module.exports = {
         Arimo: ["Arimo", "sans-serif"],
       },
       colors: {
-        AAprimary: "#0b192f",
-        AAsecondary: "#64ffda",
-        AAError: "#ff6489",
-        AAtertiary: "#112340",
-        ResumeButtonHover: "#153040",
-        MobileNavBarColor: "#112340",
-        StartupBackground: "#020c1b",
+        // Dark mode colors (original)
+        AAprimary: "var(--color-primary)",
+        AAsecondary: "var(--color-secondary)",
+        AAError: "var(--color-error)",
+        AAtertiary: "var(--color-tertiary)",
+        ResumeButtonHover: "var(--color-resume-hover)",
+        MobileNavBarColor: "var(--color-mobile-nav)",
+        MobileNavColor: "var(--color-mobile-nav-overlay)",
+        StartupBackground: "var(--color-startup-bg)",
+
+        // Text colors
+        "text-primary": "var(--color-text-primary)",
+        "text-secondary": "var(--color-text-secondary)",
+        "text-muted": "var(--color-text-muted)",
+
+        // Surface colors
+        "surface": "var(--color-surface)",
+        "surface-elevated": "var(--color-surface-elevated)",
       },
       screens: {
         sm: "640px",
-        // => @media (min-width: 640px) { ... }
-
         md: "768px",
-        // => @media (min-width: 768px) { ... }
-
         lg: "1024px",
-        // => @media (min-width: 1024px) { ... }
-
         xl: "1280px",
-        // => @media (min-width: 1280px) { ... }
-
         "2xl": "1536px",
-        // => @media (min-width: 1536px) { ... }
         "3xl": "1920px",
         "4xl": "2560px",
         "5xl": "3840px",
       },
+      boxShadow: {
+        'theme': 'var(--shadow-default)',
+        'theme-lg': 'var(--shadow-lg)',
+      },
     },
   },
-  plugins: [require("tailwind-scrollbar"), require("tailwind-scrollbar-hide")],
-  variants: {
-    scrollbar: ["rounded"],
-  },
+  plugins: [
+    require("tailwind-scrollbar")({ nocompatible: true }),
+    require("tailwind-scrollbar-hide"),
+  ],
 };

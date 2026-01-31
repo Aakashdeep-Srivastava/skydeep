@@ -1,8 +1,14 @@
 import React from "react";
+
 type Props = {
-  type;
-  location;
+  type: "Desktop" | "Mobile";
+  location: number[];
 };
+
+interface LocationProps {
+  location: number[];
+}
+
 export default function LatLonTable(props: Props) {
   switch (props.type) {
     case "Desktop":
@@ -12,34 +18,34 @@ export default function LatLonTable(props: Props) {
   }
 }
 
-const LatLongTableDesktop = location => {
+const LatLongTableDesktop = ({ location }: LocationProps) => {
   return (
     <table className="md:block hidden font-mono">
       <tbody className="border-2  md:text-sm text-xs">
         <tr className=" border-2 ">
           <td className="border-2 py-1 px-8 ">Latitude :</td>
-          <td className="text-AAsecondary px-8">{location.location[0]}</td>
+          <td className="text-AAsecondary px-8">{location[0]}</td>
         </tr>
         <tr>
           <td className="border-2 py-1 px-8">Longitude :</td>
-          <td className="text-AAsecondary px-8">{location.location[1]}</td>
+          <td className="text-AAsecondary px-8">{location[1]}</td>
         </tr>
       </tbody>
     </table>
   );
 };
 
-const LatLongTableMobile = location => {
+const LatLongTableMobile = ({ location }: LocationProps) => {
   return (
     <table className="md:hidden block font-mono">
       <tbody className="border-2  md:text-xl text-xs">
         <tr className=" border-2 ">
           <td className="border-2 py-1 px-8 ">Latitude :</td>
-          <td className="text-AAsecondary px-8">{location.location[0]}</td>
+          <td className="text-AAsecondary px-8">{location[0]}</td>
         </tr>
         <tr>
           <td className="border-2 py-1 px-8">Longitude :</td>
-          <td className="text-AAsecondary px-8">{location.location[1]}</td>
+          <td className="text-AAsecondary px-8">{location[1]}</td>
         </tr>
       </tbody>
     </table>

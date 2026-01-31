@@ -1,0 +1,8 @@
+{
+  "id": "2024-01-14-building-rag-pipelines",
+  "title": "Building RAG Pipelines with LangChain",
+  "content": "Retrieval-Augmented Generation (RAG) is transforming how we build AI applications. Here's what I learned about creating efficient document retrieval pipelines.\n\n## What is RAG?\n\nRAG combines the power of large language models with external knowledge retrieval. Instead of relying solely on the model's training data, we can augment responses with up-to-date, domain-specific information.\n\n## The Pipeline\n\n1. **Document Loading** - Ingest documents from various sources\n2. **Text Splitting** - Break documents into meaningful chunks\n3. **Embedding** - Convert text into vector representations\n4. **Vector Store** - Index embeddings for efficient retrieval\n5. **Retrieval** - Find relevant chunks based on user query\n6. **Generation** - Use LLM to synthesize answer from retrieved context\n\n## Key Learnings\n\n- Chunk size matters: Too small loses context, too large dilutes relevance\n- Overlap between chunks helps maintain continuity\n- Hybrid search (semantic + keyword) often outperforms pure semantic search\n- Re-ranking retrieved documents significantly improves quality\n\nNext up: Exploring different embedding models and their trade-offs.",
+  "excerpt": "Retrieval-Augmented Generation (RAG) is transforming how we build AI applications. Here's what I learned about creating efficient document retrieval pipelines.",
+  "date": "2024-01-14T09:00:00Z",
+  "tags": ["ai", "langchain", "rag"]
+}

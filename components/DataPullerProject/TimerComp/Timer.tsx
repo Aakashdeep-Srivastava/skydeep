@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { RefObject } from 'react';
+
 type Props = {
-minTens,
-minUnits,
-secTens,
-secUnits,
-}
+  minTens: RefObject<HTMLSpanElement | null>;
+  minUnits: RefObject<HTMLSpanElement | null>;
+  secTens: RefObject<HTMLSpanElement | null>;
+  secUnits: RefObject<HTMLSpanElement | null>;
+};
 export default function Timer(props:Props) {
   return (
     <div className="w-full">

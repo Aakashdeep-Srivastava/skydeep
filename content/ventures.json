@@ -1,0 +1,23 @@
+{
+  "ventures": [
+    {
+      "id": "ai-learning-platform",
+      "title": "AI-Powered Learning Platform",
+      "description": "Building an adaptive learning platform that personalizes educational content using AI. The system analyzes learning patterns and adjusts difficulty in real-time to optimize knowledge retention.",
+      "imageUrl": "/images/ventures/ai-learning.png",
+      "status": "in-progress"
+    },
+    {
+      "id": "open-source-dev-tools",
+      "title": "Open Source Developer Tools",
+      "description": "Creating a suite of developer productivity tools focused on AI-assisted coding, documentation generation, and automated testing. Making software development more accessible and efficient.",
+      "imageUrl": "/images/ventures/dev-tools.png",
+      "status": "planning"
+    }
+  ],
+  "donation": {
+    "paypal": "https://paypal.me/aakashdeep",
+    "upi": "aakashdeep@upi",
+    "email": "aakashdeep0551@gmail.com"
+  }
+}

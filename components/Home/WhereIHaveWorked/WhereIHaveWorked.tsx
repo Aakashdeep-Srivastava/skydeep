@@ -1,6 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+interface CompaniesBarProps {
+  setDescriptionJob: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface CompanyButtonProps {
+  buttonIndex: number;
+  companyName: string;
+  barPosition: number;
+  barAbovePosition: number;
+  descriptionJob: string;
+  newColorState: boolean[];
+}
+
 export default function WhereIHaveWorked() {
   const [descriptionJob, setDescriptionJob] = React.useState("EduGorilla");
   
@@ -23,10 +36,10 @@ export default function WhereIHaveWorked() {
     <div className="flex flex-col items-center justify-center py-24 space-y-12 bg-AAprimary">
       <section className="flex flex-row items-center">
         <span className="text-AAsecondary font-sans text-sm sm:text-xl">02.</span>
-        <span className="text-gray-200 opacity-85 font-bold tracking-wider text-lg md:text-2xl px-3">
+        <span className="text-theme-primary opacity-85 font-bold tracking-wider text-lg md:text-2xl px-3">
           Where I&apos;ve Worked
         </span>
-        <div className="bg-gray-400 h-[0.2px] w-16 sm:w-44 md:w-80"></div>
+        <div className="bg-theme-muted h-[0.2px] w-16 sm:w-44 md:w-80"></div>
       </section>
       
       <section className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 justify-center items-center md:items-start">
@@ -37,21 +50,21 @@ export default function WhereIHaveWorked() {
   );
 }
 
-const CompaniesBar = ({ setDescriptionJob }) => {
+const CompaniesBar = ({ setDescriptionJob }: CompaniesBarProps) => {
   const [barPosition, setBarPosition] = React.useState(-8);
   const [barAbovePosition, setBarAbovePosition] = React.useState(0);
   const [companyNameBackgroundColorGreen, setCompanyNameBackgroundColorGreen] = React.useState([
     true, false, false, false
   ]);
 
-  const CompanyButton = ({ 
+  const CompanyButton = ({
     buttonIndex,
     companyName,
     barPosition,
     barAbovePosition,
     descriptionJob,
     newColorState
-  }) => (
+  }: CompanyButtonProps) => (
     <button
       onClick={() => {
         setBarPosition(barPosition);
@@ -61,7 +74,7 @@ const CompaniesBar = ({ setDescriptionJob }) => {
       }}
       className={`flex-none sm:text-sm text-xs text-center md:text-left hover:text-AAsecondary
         hover:bg-ResumeButtonHover rounded font-mono py-3 md:pl-6 md:px-4 md:w-44 w-32 duration-500
-        ${companyNameBackgroundColorGreen[buttonIndex] ? "bg-ResumeButtonHover text-AAsecondary" : "text-gray-500"}`}
+        ${companyNameBackgroundColorGreen[buttonIndex] ? "bg-ResumeButtonHover text-AAsecondary" : "text-theme-muted"}`}
     >
       {companyName}
     </button>
@@ -69,7 +82,7 @@ const CompaniesBar = ({ setDescriptionJob }) => {
 
   return (
     <div className="flex flex-col md:flex-row w-screen lg:w-auto overflow-auto scrollbar-hide md:overflow-hidden pb-4 md:pb-0 justify-start sm:justify-center items-start sm:items-center">
-      <div className="hidden md:block bg-gray-500 relative h-0.5 w-34 md:h-[352px] translate-y-1 md:w-0.5 rounded md:order-1 order-2">
+      <div className="hidden md:block bg-theme-muted relative h-0.5 w-34 md:h-[352px] translate-y-1 md:w-0.5 rounded md:order-1 order-2">
         <motion.div
           animate={{ y: barPosition }}
           className="absolute w-10 h-0.5 md:w-0.5 md:h-12 rounded bg-AAsecondary"
@@ -111,7 +124,7 @@ const CompaniesBar = ({ setDescriptionJob }) => {
             newColorState={[false, false, false, true]}
           />
         </div>
-        <div className="block md:hidden h-0.5 rounded bg-gray-500">
+        <div className="block md:hidden h-0.5 rounded bg-theme-muted">
           <motion.div 
             animate={{ x: barAbovePosition }} 
             className="w-[128px] h-0.5 rounded bg-AAsecondary" 
@@ -125,10 +138,10 @@ const CompaniesBar = ({ setDescriptionJob }) => {
 const EduGorillaDesc = () => (
   <div className="flex-col space-y-5 max-w-xl px-4 md:px-0">
     <div className="flex flex-col space-y-2">
-      <span className="text-gray-100 text-xl font-bold">AI Engineer</span>
+      <span className="text-theme-primary text-xl font-bold">AI Engineer</span>
       <span className="text-AAsecondary">Aug 2024 - Present</span>
     </div>
-    <div className="flex flex-col space-y-4 text-gray-400">
+    <div className="flex flex-col space-y-4 text-theme-secondary">
       <div className="flex flex-row space-x-2">
         <span className="text-AAsecondary">▹</span>
         <span>Fine-tuned <span className="text-AAsecondary">Qwen-3B (2.5B parameters)</span> using <span className="text-AAsecondary">Amazon SageMaker</span> for K-8 educational content, implementing <span className="text-AAsecondary">Parameter Efficient Fine-Tuning (PEFT)</span> over 3-6 epochs for optimized resource utilization.</span>
@@ -152,10 +165,10 @@ const EduGorillaDesc = () => (
 const KrstaDesc = () => (
   <div className="flex-col space-y-5 max-w-xl px-4 md:px-0">
     <div className="flex flex-col space-y-2">
-      <span className="text-gray-100 text-xl font-bold">Webflow Developer</span>
+      <span className="text-theme-primary text-xl font-bold">Webflow Developer</span>
       <span className="text-AAsecondary">Oct 2023 - Jun 2023</span>
     </div>
-    <div className="flex flex-col space-y-4 text-gray-400">
+    <div className="flex flex-col space-y-4 text-theme-secondary">
       <div className="flex flex-row space-x-2">
         <span className="text-AAsecondary">▹</span>
         <span>Revamped website using <span className="text-AAsecondary">Figma</span> and <span className="text-AAsecondary">Webflow</span>, optimizing admin dashboard with <span className="text-AAsecondary">Airtable automations</span>, achieving a <span className="text-AAsecondary">15-30%</span> improvement in user experience.</span>
@@ -171,10 +184,10 @@ const KrstaDesc = () => (
 const HURLDesc = () => (
   <div className="flex-col space-y-5 max-w-xl px-4 md:px-0">
     <div className="flex flex-col space-y-2">
-      <span className="text-gray-100 text-xl font-bold">Summer Engineering Intern</span>
+      <span className="text-theme-primary text-xl font-bold">Summer Engineering Intern</span>
       <span className="text-AAsecondary">Jun 2022 - Aug 2022</span>
     </div>
-    <div className="flex flex-col space-y-4 text-gray-400">
+    <div className="flex flex-col space-y-4 text-theme-secondary">
       <div className="flex flex-row space-x-2">
         <span className="text-AAsecondary">▹</span>
         <span>Analyzed <span className="text-AAsecondary">DM-Plant blueprint</span> to identify <span className="text-AAsecondary">3 critical issues</span> within the N-Pit area.</span>
@@ -190,10 +203,10 @@ const HURLDesc = () => (
 const RailwaysDesc = () => (
   <div className="flex-col space-y-5 max-w-xl px-4 md:px-0">
     <div className="flex flex-col space-y-2">
-      <span className="text-gray-100 text-xl font-bold">Summer Engineering Intern</span>
+      <span className="text-theme-primary text-xl font-bold">Summer Engineering Intern</span>
       <span className="text-AAsecondary">Jun 2021 - Jul 2021</span>
     </div>
-    <div className="flex flex-col space-y-4 text-gray-400">
+    <div className="flex flex-col space-y-4 text-theme-secondary">
       <div className="flex flex-row space-x-2">
         <span className="text-AAsecondary">▹</span>
         <span>Analyzed <span className="text-AAsecondary">air brake systems</span> in LHB railway coaches, examining <span className="text-AAsecondary">20+ components</span> for high-speed operations up to <span className="text-AAsecondary">160 km/h</span>.</span>

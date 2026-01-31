@@ -1,11 +1,16 @@
-import React from "react";
-import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
+import React, { ComponentType } from "react";
+import { motion } from "framer-motion";
 import GithubIcon from "../../Icons/GithubIcon";
 import LinkedinIcon from "../../Icons/LinkedinIcon";
 import InstagramIcon from "../../Icons/InstagramIcon";
 import YoutubeIcon from "../../Icons/YoutubeIcon";
 
-const IconClickableWithAnimation = props => {
+interface IconClickableProps {
+  Icon: ComponentType<{ className?: string }>;
+  href: string;
+}
+
+const IconClickableWithAnimation = ({ Icon, href }: IconClickableProps) => {
   return (
     <motion.div
       whileHover={{
@@ -14,8 +19,8 @@ const IconClickableWithAnimation = props => {
       }}
       className=""
     >
-      <a href={props.href} className="" target={"_blank"} rel="noreferrer">
-        <props.Icon className={"w-6 h-6 text-gray-400 hover:text-AAsecondary fill-current hover:cursor-pointer"} />
+      <a href={href} className="" target={"_blank"} rel="noreferrer">
+        <Icon className={"w-6 h-6 text-theme-secondary hover:text-AAsecondary fill-current hover:cursor-pointer"} />
       </a>
     </motion.div>
   );
@@ -40,7 +45,7 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
             {/* Youtube Icon */}
             <IconClickableWithAnimation Icon={YoutubeIcon} href={"https://www.youtube.com/@aakashvani4046"} />
           </div>
-          <div className="h-28 w-0.5 bg-gray-400"></div>
+          <div className="h-28 w-0.5 bg-theme-secondary"></div>
         </div>
       </motion.div>
 
@@ -63,13 +68,13 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
             className=""
           >
             <a href="mailto:aakashdeep0551@gmail.com" target={"_blank"} rel="noreferrer">
-              <span className=" font-Header tracking-wider text-gray-400 hover:text-AAsecondary hover:cursor-pointer">
+              <span className=" font-Header tracking-wider text-theme-secondary hover:text-AAsecondary hover:cursor-pointer">
                 aakashdeep0551<span className="text-AAsecondary">@</span>gmail<span className="text-AAsecondary">.</span>com
               </span>
             </a>
           </motion.div>
 
-          <div className="h-24 w-0.5 bg-gray-400"></div>
+          <div className="h-24 w-0.5 bg-theme-secondary"></div>
         </div>
       </motion.div>
     </>
