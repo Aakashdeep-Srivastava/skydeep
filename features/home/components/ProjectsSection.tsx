@@ -302,6 +302,166 @@ export default function SomethingIveBuilt() {
           </div>
         </div>
 
+        {/* Project 6 - LFA Studio */}
+        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+          <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
+            <div className="relative rounded w-full h-full col-span-7">
+              <a href="https://github.com/Aakashdeep-Srivastava/LFA-STUDIO" target="_blank" rel="noreferrer">
+                <div className="absolute w-full h-full rounded bg-AAprimary
+                  transition-opacity opacity-30 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+              </a>
+              <Img src={"/lfa-studio.png"} alt={"LFA Studio Project"} className={`w-full rounded h-full`} />
+            </div>
+          </div>
+
+          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
+            <div className="absolute w-full h-full bg-opacity-70 z-0">
+              <div className="relative w-full h-full">
+                <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
+                <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
+                <Img src={"/lfa-studio.png"} alt={"LFA Studio Project"} className={`w-full h-full`} />
+              </div>
+            </div>
+
+            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
+              col-span-8 flex flex-col items-start md:items-end space-y-3">
+              <div className="flex flex-col space-y-1 md:items-end z-10">
+                <span className="text-AAsecondary text-base">Visual Project Planning Tool</span>
+                <a href="https://github.com/Aakashdeep-Srivastava/LFA-STUDIO" target="_blank" rel="noopener noreferrer">
+                  <span className="md:text-theme-primary text-AAsecondary font-bold text-xl hover:cursor-pointer">
+                    LFA Studio - Logical Framework
+                  </span>
+                </a>
+              </div>
+              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
+                <p className="text-theme-primary md:text-theme-secondary text-left md:text-right">
+                  Visual canvas editor for NGOs to design <span className="text-AAsecondary">Logical Framework projects</span>.
+                  Features <span className="text-AAsecondary">AI-powered Shiksha-Bot</span> using Gemini 1.5,
+                  <span className="text-AAsecondary"> real-time collaboration</span> with WebSockets, ghost block detection,
+                  and exports to PDF/DOCX/Excel formats.
+                </p>
+              </div>
+              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-end">
+                <span className="pr-4 z-10">Next.js 14</span>
+                <span className="pr-4 z-10">FastAPI</span>
+                <span className="pr-4 z-10">React Flow</span>
+                <span className="pr-4 z-10">Gemini AI</span>
+              </ul>
+              <div className="z-10 flex fle-row space-x-5">
+                <GithubIcon link="https://github.com/Aakashdeep-Srivastava/LFA-STUDIO" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Project 7 - ThalassCare AI */}
+        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+          <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
+            <div className="relative rounded w-full h-full col-start-6 col-span-7">
+              <a href="https://dist-roan-three.vercel.app" target="_blank" rel="noreferrer">
+                <div className="absolute w-full h-full rounded bg-AAprimary
+                  transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+              </a>
+              <Img src={"/thalasscare.png"} alt={"ThalassCare AI Project"} className={`w-full rounded h-full`} />
+            </div>
+          </div>
+
+          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
+            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
+              <div className="relative w-full h-full">
+                <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
+                <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
+                <Img src={"/thalasscare.png"} alt={"ThalassCare AI Project"} className={`w-full h-full`} />
+              </div>
+            </div>
+
+            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
+              <div className="flex flex-col space-y-1 z-10">
+                <span className="text-AAsecondary text-base">Healthcare AI Solution</span>
+                <a href="https://dist-roan-three.vercel.app" target="_blank" rel="noopener noreferrer">
+                  <span className="md:text-theme-primary text-AAsecondary font-bold text-xl hover:cursor-pointer">
+                    ThalassCare AI - Patient Care
+                  </span>
+                </a>
+              </div>
+              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
+                <p className="text-theme-primary md:text-theme-secondary text-left">
+                  Mobile health app for <span className="text-AAsecondary">thalassemia patients</span> with
+                  <span className="text-AAsecondary"> AI-driven health scores</span>, transfusion scheduling,
+                  iron overload alerts, and <span className="text-AAsecondary">e-RaktKosh integration</span> for
+                  real-time blood availability from 3,800+ centers. Serving 270M+ carriers worldwide.
+                </p>
+              </div>
+              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-start">
+                <span className="pr-4 z-10">React Native</span>
+                <span className="pr-4 z-10">TypeScript</span>
+                <span className="pr-4 z-10">Expo</span>
+                <span className="pr-4 z-10">LangGraph AI</span>
+              </ul>
+              <div className="z-10 flex fle-row space-x-5">
+                <a href="https://dist-roan-three.vercel.app" target="_blank" rel="noreferrer">
+                  <ExternalLink />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Project 8 - Udyamika */}
+        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+          <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
+            <div className="relative rounded w-full h-full col-span-7">
+              <a href="https://udyamika.vercel.app" target="_blank" rel="noreferrer">
+                <div className="absolute w-full h-full rounded bg-AAprimary
+                  transition-opacity opacity-30 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+              </a>
+              <Img src={"/udyamika.png"} alt={"Udyamika Project"} className={`w-full rounded h-full`} />
+            </div>
+          </div>
+
+          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
+            <div className="absolute w-full h-full bg-opacity-70 z-0">
+              <div className="relative w-full h-full">
+                <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
+                <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
+                <Img src={"/udyamika.png"} alt={"Udyamika Project"} className={`w-full h-full`} />
+              </div>
+            </div>
+
+            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
+              col-span-8 flex flex-col items-start md:items-end space-y-3">
+              <div className="flex flex-col space-y-1 md:items-end z-10">
+                <span className="text-AAsecondary text-base">Women Entrepreneur Empowerment</span>
+                <a href="https://udyamika.vercel.app" target="_blank" rel="noopener noreferrer">
+                  <span className="md:text-theme-primary text-AAsecondary font-bold text-xl hover:cursor-pointer">
+                    Udyamika - Empowering Women Entrepreneurs
+                  </span>
+                </a>
+              </div>
+              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
+                <p className="text-theme-primary md:text-theme-secondary text-left md:text-right">
+                  Comprehensive platform empowering <span className="text-AAsecondary">women entrepreneurs across India</span>.
+                  Features <span className="text-AAsecondary">Niti Sankalan</span> for government schemes,
+                  <span className="text-AAsecondary"> Gyanvardhan</span> for learning modules,
+                  <span className="text-AAsecondary"> Margdarshan</span> for mentorship, and
+                  <span className="text-AAsecondary"> Vitta Path</span> for financial literacy and funding resources.
+                </p>
+              </div>
+              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-end">
+                <span className="pr-4 z-10">Next.js</span>
+                <span className="pr-4 z-10">TypeScript</span>
+                <span className="pr-4 z-10">Tailwind CSS</span>
+                <span className="pr-4 z-10">Vercel</span>
+              </ul>
+              <div className="z-10 flex fle-row space-x-5">
+                <a href="https://udyamika.vercel.app" target="_blank" rel="noreferrer">
+                  <ExternalLink />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       </div>
     </section>
