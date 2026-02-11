@@ -65,26 +65,26 @@ export default function AboutMe() {
 
           {/* Image Container - Centered on mobile */}
           <div className="lg:w-2/5 flex justify-center lg:justify-end">
-            <div className="relative group w-full max-w-[380px] sm:max-w-[520px]">
+            <div className="relative group w-48 sm:w-64 md:w-72 lg:w-80 aspect-[3/4]">
               {/* Border Frame */}
-              <div className="absolute inset-0 border-2 border-AAsecondary translate-x-3 translate-y-3
-                            sm:translate-x-4 sm:translate-y-4 image-frame
-                            transition-transform duration-300 group-hover:translate-x-2
-                            group-hover:translate-y-2 rounded-lg"></div>
+              <div className="absolute inset-0 border-2 border-AAsecondary rounded-md
+                            translate-x-3 translate-y-3 sm:translate-x-5 sm:translate-y-5
+                            transition-transform duration-300 group-hover:translate-x-3
+                            group-hover:translate-y-3"></div>
 
-              {/* Image Wrapper - Portrait aspect ratio */}
-              <div className="relative rounded-lg overflow-hidden aspect-[3/4] shadow-xl">
+              {/* Image Wrapper */}
+              <div className="relative rounded-md overflow-hidden w-full h-full">
                 <Image
                   src="/images/sky.jpg"
                   alt="Aakashdeep Srivastava"
                   fill
                   style={{ objectFit: 'cover' }}
-                  className="rounded-lg transition-all duration-300 group-hover:scale-105"
+                  className="transition-all duration-300 group-hover:scale-105"
                   priority
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-AAsecondary/20 transition-opacity
-                              duration-300 group-hover:opacity-0"></div>
+                              duration-300 group-hover:opacity-0 rounded-md"></div>
               </div>
             </div>
           </div>

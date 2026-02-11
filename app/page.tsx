@@ -73,7 +73,7 @@ export default function Home() {
   const isProd = process.env.NODE_ENV === "production";
 
   return (
-    <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full">
+    <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full overflow-x-hidden">
       {/* Critical path - loads immediately */}
       <Header finishedLoading={true} sectionsRef={homeRef} />
       <HeroSection finishedLoading={true} />

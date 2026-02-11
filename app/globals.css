@@ -181,7 +181,6 @@ a {
 
 .project-card:hover {
   box-shadow: var(--shadow-card-hover);
-  transform: translateY(-2px);
 }
 
 /* Project description box */

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import ArrowIcon from "@/components/Icons/ArrowIcon";
-import Img from "@/components/smallComp/image/Img";
 import GithubIcon from "@/components/Icons/GithubIconForSomethingIveBuild";
 import ExternalLink from "@/components/Icons/ExternalLink";
+import LazyVideo from "@/components/LazyVideo";
 
 export default function SomethingIveBuilt() {
   return (
@@ -25,20 +25,20 @@ export default function SomethingIveBuilt() {
       <div className="flex flex-col space-y-12 sm:space-y-16 md:space-y-24">
 
         {/* Project 1 - LFA Studio */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
             <div className="relative rounded w-full h-full col-start-6 col-span-7">
               <a href="https://lfastudio.life" target="_blank" rel="noreferrer">
                 <div className="absolute w-full h-full rounded bg-AAprimary
-                  transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+                  transition-opacity opacity-50 group-hover/card:opacity-0 cursor-pointer duration-300"></div>
               </a>
-              <video src="/lfaStudio.mp4" autoPlay muted loop playsInline className="w-full rounded h-full object-cover" />
+              <LazyVideo src="/lfaStudio.webm" poster="/posters/lfaStudio.webp" className="w-full rounded h-full object-cover" />
             </div>
           </div>
 
           {/* Mobile thumbnail */}
           <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
-            <video src="/lfaStudio.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+            <LazyVideo src="/lfaStudio.webm" poster="/posters/lfaStudio.webp" className="w-full h-full object-cover" />
           </div>
 
           <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
@@ -47,7 +47,7 @@ export default function SomethingIveBuilt() {
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <video src="/lfaStudio.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                <LazyVideo src="/lfaStudio.webm" poster="/posters/lfaStudio.webp" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -88,20 +88,20 @@ export default function SomethingIveBuilt() {
         </div>
 
         {/* Project 2 - Autism Support Centre AI */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
             <div className="relative rounded w-full h-full col-span-7">
               <a href="https://autisticsupportcenter.vercel.app" target="_blank" rel="noreferrer">
                 <div className="absolute w-full h-full rounded bg-AAprimary
-                  transition-opacity opacity-30 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+                  transition-opacity opacity-30 group-hover/card:opacity-0 cursor-pointer duration-300"></div>
               </a>
-              <video src="/autistic.mp4" autoPlay muted loop playsInline className="w-full rounded h-full object-cover" />
+              <LazyVideo src="/autistic.webm" poster="/posters/autistic.webp" className="w-full rounded h-full object-cover" />
             </div>
           </div>
 
           {/* Mobile thumbnail */}
           <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
-            <video src="/autistic.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+            <LazyVideo src="/autistic.webm" poster="/posters/autistic.webp" className="w-full h-full object-cover" />
           </div>
 
           <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
@@ -110,7 +110,7 @@ export default function SomethingIveBuilt() {
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <video src="/autistic.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                <LazyVideo src="/autistic.webm" poster="/posters/autistic.webp" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -150,20 +150,20 @@ export default function SomethingIveBuilt() {
         </div>
 
         {/* Project 3 - Police Resource Management */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
             <div className="relative rounded w-full h-full col-start-6 col-span-7">
               <a href="https://github.com/Aakashdeep-Srivastava/PRM_Karnataka" target="_blank" rel="noreferrer">
                 <div className="absolute w-full h-full rounded bg-AAprimary
-                  transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+                  transition-opacity opacity-50 group-hover/card:opacity-0 cursor-pointer duration-300"></div>
               </a>
-              <Img src={"/Karnataka Police.gif"} alt={"PRM Project"} className={`w-full rounded h-full`} />
+              <LazyVideo src="/karnataka-police.webm" poster="/posters/karnataka-police.webp" className="w-full rounded h-full object-cover" />
             </div>
           </div>
 
           {/* Mobile thumbnail */}
           <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
-            <Img src={"/Karnataka Police.gif"} alt={"PRM Project"} className={`w-full h-full`} />
+            <LazyVideo src="/karnataka-police.webm" poster="/posters/karnataka-police.webp" className="w-full h-full object-cover" />
           </div>
 
           <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
@@ -172,7 +172,7 @@ export default function SomethingIveBuilt() {
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img src={"/Karnataka Police.gif"} alt={"PRM Project"} className={`w-full h-full`} />
+                <LazyVideo src="/karnataka-police.webm" poster="/posters/karnataka-police.webp" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -210,20 +210,20 @@ export default function SomethingIveBuilt() {
         </div>
 
         {/* Project 4 - SWAM+ Agentic Asset Management */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
             <div className="relative rounded w-full h-full col-span-7">
               <a href="#" target="_blank" rel="noreferrer">
                 <div className="absolute w-full h-full rounded bg-AAprimary
-                  transition-opacity opacity-30 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+                  transition-opacity opacity-30 group-hover/card:opacity-0 cursor-pointer duration-300"></div>
               </a>
-              <video src="/SWAM.mp4" autoPlay muted loop playsInline className="w-full rounded h-full object-cover" />
+              <LazyVideo src="/SWAM.webm" poster="/posters/SWAM.webp" className="w-full rounded h-full object-cover" />
             </div>
           </div>
 
           {/* Mobile thumbnail */}
           <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
-            <video src="/SWAM.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+            <LazyVideo src="/SWAM.webm" poster="/posters/SWAM.webp" className="w-full h-full object-cover" />
           </div>
 
           <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
@@ -232,7 +232,7 @@ export default function SomethingIveBuilt() {
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <video src="/SWAM.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                <LazyVideo src="/SWAM.webm" poster="/posters/SWAM.webp" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -269,23 +269,20 @@ export default function SomethingIveBuilt() {
         </div>
 
         {/* Project 5 - EduMate */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
             <div className="relative rounded w-full h-full col-start-6 col-span-7">
               <a href="https://github.com/Aakashdeep-Srivastava/edumate1.1" target="_blank" rel="noreferrer">
                 <div className="absolute w-full h-full rounded bg-AAprimary
-                  transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+                  transition-opacity opacity-50 group-hover/card:opacity-0 cursor-pointer duration-300"></div>
               </a>
-              <Img
-              src={"/edumate 2.png"}
-              alt={"EduMate Project"}
-              className={`w-full rounded h-full`} />
+              <LazyVideo src="/edumate.webm" poster="/posters/edumate.webp" className="w-full rounded h-full object-cover" />
             </div>
           </div>
 
           {/* Mobile thumbnail */}
           <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
-            <Img src={"/edumate 2.png"} alt={"EduMate Project"} className={`w-full h-full`} />
+            <LazyVideo src="/edumate.webm" poster="/posters/edumate.webp" className="w-full h-full object-cover" />
           </div>
 
           <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
@@ -294,10 +291,7 @@ export default function SomethingIveBuilt() {
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img
-                src={"/edumate 2.png"}
-                alt={"EduMate Project"}
-                className={`w-full h-full`} />
+                <LazyVideo src="/edumate.webm" poster="/posters/edumate.webp" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -335,20 +329,20 @@ export default function SomethingIveBuilt() {
         </div>
 
         {/* Project 6 - ReachifyMe */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
             <div className="relative rounded w-full h-full col-span-7">
               <a href="https://drive.google.com/file/d/1Sfnlhc80Fi1jH4P0I6wBTrbXdB41NpC8/view" target="_blank" rel="noreferrer">
                 <div className="absolute w-full h-full rounded bg-AAprimary
-                  transition-opacity opacity-30 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+                  transition-opacity opacity-30 group-hover/card:opacity-0 cursor-pointer duration-300"></div>
               </a>
-              <Img src={"/ReachifyMe Go-To-Market Strategy.gif"} alt={"ReachifyMe Project"} className={`w-full rounded h-full`} />
+              <LazyVideo src="/reachifyme.webm" poster="/posters/reachifyme.webp" className="w-full rounded h-full object-cover" />
             </div>
           </div>
 
           {/* Mobile thumbnail */}
           <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
-            <Img src={"/ReachifyMe Go-To-Market Strategy.gif"} alt={"ReachifyMe Project"} className={`w-full h-full`} />
+            <LazyVideo src="/reachifyme.webm" poster="/posters/reachifyme.webp" className="w-full h-full object-cover" />
           </div>
 
           <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
@@ -357,7 +351,7 @@ export default function SomethingIveBuilt() {
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img src={"/ReachifyMe Go-To-Market Strategy.gif"} alt={"ReachifyMe Project"} className={`w-full h-full`} />
+                <LazyVideo src="/reachifyme.webm" poster="/posters/reachifyme.webp" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -396,20 +390,20 @@ export default function SomethingIveBuilt() {
         </div>
 
         {/* Project 7 - Trading LLM Chatbot */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
             <div className="relative rounded w-full h-full col-start-6 col-span-7">
               <a href="https://harsh903-trading-llm-chatbot-app-fhmeah.streamlit.app/" target="_blank" rel="noreferrer">
                 <div className="absolute w-full h-full rounded bg-AAprimary
-                  transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+                  transition-opacity opacity-50 group-hover/card:opacity-0 cursor-pointer duration-300"></div>
               </a>
-              <Img src={"/dashboard.gif"} alt={"Trading Bot Project"} className={`w-full rounded h-full`} />
+              <LazyVideo src="/dashboard.webm" poster="/posters/dashboard.webp" className="w-full rounded h-full object-cover" />
             </div>
           </div>
 
           {/* Mobile thumbnail */}
           <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
-            <Img src={"/dashboard.gif"} alt={"Trading Bot Project"} className={`w-full h-full`} />
+            <LazyVideo src="/dashboard.webm" poster="/posters/dashboard.webp" className="w-full h-full object-cover" />
           </div>
 
           <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
@@ -418,7 +412,7 @@ export default function SomethingIveBuilt() {
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img src={"/dashboard.gif"} alt={"Trading Bot Project"} className={`w-full h-full`} />
+                <LazyVideo src="/dashboard.webm" poster="/posters/dashboard.webp" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -455,14 +449,14 @@ export default function SomethingIveBuilt() {
         </div>
 
         {/* Project 8 - MetroMind */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
             <div className="relative rounded w-full h-full col-span-7 flex items-center justify-center bg-AAprimary overflow-hidden">
               <a href="https://github.com/Aakashdeep-Srivastava/metromind" target="_blank" rel="noreferrer"
                 className="relative h-full aspect-[9/16] mx-auto">
                 <div className="absolute w-full h-full rounded-xl bg-AAprimary
-                  transition-opacity opacity-30 hover:opacity-0 hover:cursor-pointer duration-300 z-10"></div>
-                <video src="/metromind.mp4" autoPlay muted loop playsInline className="h-full rounded-xl object-contain" />
+                  transition-opacity opacity-30 group-hover/card:opacity-0 cursor-pointer duration-300 z-10"></div>
+                <LazyVideo src="/metromind.webm" poster="/posters/metromind.webp" className="h-full rounded-xl object-contain" />
               </a>
             </div>
           </div>
@@ -470,7 +464,7 @@ export default function SomethingIveBuilt() {
           {/* Mobile thumbnail - phone mockup */}
           <div className="md:hidden flex justify-center py-4 bg-AAprimary rounded-t-lg">
             <div className="h-48 aspect-[9/16] rounded-xl overflow-hidden border border-AAsecondary/30 shadow-lg">
-              <video src="/metromind.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+              <LazyVideo src="/metromind.webm" poster="/posters/metromind.webp" className="w-full h-full object-cover" />
             </div>
           </div>
 
@@ -480,7 +474,7 @@ export default function SomethingIveBuilt() {
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <video src="/metromind.mp4" autoPlay muted loop playsInline className="h-full aspect-[9/16] rounded-xl object-contain" />
+                <LazyVideo src="/metromind.webm" poster="/posters/metromind.webp" className="h-full aspect-[9/16] rounded-xl object-contain" />
               </div>
             </div>
 
@@ -516,29 +510,32 @@ export default function SomethingIveBuilt() {
         </div>
 
         {/* Project 9 - ThalassCare AI */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
-            <div className="relative rounded w-full h-full col-start-6 col-span-7">
-              <a href="https://dist-roan-three.vercel.app" target="_blank" rel="noreferrer">
-                <div className="absolute w-full h-full rounded bg-AAprimary
-                  transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+            <div className="relative rounded w-full h-full col-start-6 col-span-7 flex items-center justify-center bg-AAprimary overflow-hidden">
+              <a href="https://dist-roan-three.vercel.app" target="_blank" rel="noreferrer"
+                className="relative h-full aspect-[9/16] mx-auto">
+                <div className="absolute w-full h-full rounded-xl bg-AAprimary
+                  transition-opacity opacity-30 group-hover/card:opacity-0 cursor-pointer duration-300 z-10"></div>
+                <LazyVideo src="/thalasscare.webm" poster="/posters/thalasscare.webp" className="h-full rounded-xl object-contain" />
               </a>
-              <Img src={"/thalasscare.png"} alt={"ThalassCare AI Project"} className={`w-full rounded h-full`} />
             </div>
           </div>
 
-          {/* Mobile thumbnail */}
-          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
-            <Img src={"/thalasscare.png"} alt={"ThalassCare AI Project"} className={`w-full h-full`} />
+          {/* Mobile thumbnail - phone mockup */}
+          <div className="md:hidden flex justify-center py-4 bg-AAprimary rounded-t-lg">
+            <div className="h-48 aspect-[9/16] rounded-xl overflow-hidden border border-AAsecondary/30 shadow-lg">
+              <LazyVideo src="/thalasscare.webm" poster="/posters/thalasscare.webp" className="w-full h-full object-cover" />
+            </div>
           </div>
 
           <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
             rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
-            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0 md:order-2">
-              <div className="relative w-full h-full">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0 md:order-2 overflow-hidden">
+              <div className="relative w-full h-full flex items-center justify-center">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img src={"/thalasscare.png"} alt={"ThalassCare AI Project"} className={`w-full h-full`} />
+                <LazyVideo src="/thalasscare.webm" poster="/posters/thalasscare.webp" className="h-full aspect-[9/16] rounded-xl object-contain" />
               </div>
             </div>
 
@@ -575,20 +572,20 @@ export default function SomethingIveBuilt() {
         </div>
 
         {/* Project 10 - Udyamika */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
+        <div data-aos="fade-up" className="group/card relative md:grid md:grid-cols-12 w-full md:h-96">
           <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
             <div className="relative rounded w-full h-full col-span-7">
               <a href="https://swavalamban-path-five.vercel.app" target="_blank" rel="noreferrer">
                 <div className="absolute w-full h-full rounded bg-AAprimary
-                  transition-opacity opacity-30 hover:opacity-0 hover:cursor-pointer duration-300"></div>
+                  transition-opacity opacity-30 group-hover/card:opacity-0 cursor-pointer duration-300"></div>
               </a>
-              <video src="/udYAMIKA.mp4" autoPlay muted loop playsInline className="w-full rounded h-full object-cover" />
+              <LazyVideo src="/udYAMIKA.webm" poster="/posters/udYAMIKA.webp" className="w-full rounded h-full object-cover" />
             </div>
           </div>
 
           {/* Mobile thumbnail */}
           <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
-            <video src="/udYAMIKA.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+            <LazyVideo src="/udYAMIKA.webm" poster="/posters/udYAMIKA.webp" className="w-full h-full object-cover" />
           </div>
 
           <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
@@ -597,7 +594,7 @@ export default function SomethingIveBuilt() {
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <video src="/udYAMIKA.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                <LazyVideo src="/udYAMIKA.webm" poster="/posters/udYAMIKA.webp" className="w-full h-full object-cover" />
               </div>
             </div>
 

@@ -37,7 +37,7 @@ export default function WhereIHaveWorked() {
       id="WhereIhaveWorkedSection"
       className="w-full bg-AAprimary py-16 sm:py-24"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 overflow-x-hidden">
         {/* Section Header */}
         <div className="flex items-center gap-2 mb-8 sm:mb-12">
           <span className="text-AAsecondary font-mono text-lg sm:text-xl">02.</span>
@@ -55,7 +55,7 @@ export default function WhereIHaveWorked() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="flex-1"
+            className="flex-1 min-w-0"
           >
             {GetDescription()}
           </motion.div>

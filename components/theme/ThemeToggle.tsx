@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useThemeStore } from '@/stores/useThemeStore';
 import { motion } from 'framer-motion';
 
@@ -10,6 +11,22 @@ interface ThemeToggleProps {
 export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
   const { theme, toggleTheme } = useThemeStore();
   const isDark = theme === 'dark';
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <button
+        className={`relative p-2 rounded-full hover:bg-AAtertiary transition-colors duration-200 ${className}`}
+        aria-label="Toggle theme"
+      >
+        <div className="relative w-6 h-6" />
+      </button>
+    );
+  }
 
   return (
     <motion.button
