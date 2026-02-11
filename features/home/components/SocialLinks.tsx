@@ -36,6 +36,18 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
       >
         <div className="flex flex-col space-y-8 justify-center items-center">
           <div className="flex flex-col justify-center items-center space-y-5">
+            {/* Watch Reel button */}
+            <motion.button
+              whileHover={{ y: -3, transition: { duration: 0.1 } }}
+              onClick={() => window.dispatchEvent(new CustomEvent("open-reel"))}
+              className="w-6 h-6 flex items-center justify-center text-theme-secondary
+                         hover:text-AAsecondary hover:cursor-pointer transition-colors duration-200"
+              aria-label="Watch Reel"
+            >
+              <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </motion.button>
             {/* Github Icon */}
             <IconClickableWithAnimation Icon={GithubIcon} href={"https://github.com/Aakashdeep-Srivastava"} />
             {/* Linkedin icon */}

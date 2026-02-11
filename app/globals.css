@@ -11,6 +11,7 @@
   /* Dark Theme (Default) */
   :root,
   .dark {
+    --hero-overlay: linear-gradient(to bottom, #0b192f 0%, rgba(11,25,47,0.7) 40%, rgba(11,25,47,0.8) 70%, #0b192f 100%);
     --color-primary: #0b192f;
     --color-secondary: #64ffda;
     --color-error: #ff6489;
@@ -46,6 +47,7 @@
 
   /* Light Theme */
   .light {
+    --hero-overlay: linear-gradient(to bottom, #f8fafc 0%, rgba(248,250,252,0.7) 40%, rgba(248,250,252,0.8) 70%, #f8fafc 100%);
     --color-primary: #f8fafc;
     --color-secondary: #00b894;
     --color-error: #ff6b6b;

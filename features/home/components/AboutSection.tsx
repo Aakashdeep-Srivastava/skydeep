@@ -6,6 +6,8 @@ export default function AboutMe() {
     ["Python", "TypeScript/Node.js", "LLMs (Qwen, Gemini)"],
     ["AWS SageMaker", "PostgreSQL", "PEFT Fine-tuning"],
     ["Blockchain (Celo)", "PowerBI", "Docker"],
+    ["Vector DB", "Realtime Database", "Microservices"],
+    ["PL-100", "DP-100"],
   ];
 
   return (
