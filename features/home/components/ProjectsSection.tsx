@@ -36,8 +36,14 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
+          {/* Mobile thumbnail */}
+          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
+            <video src="/lfaStudio.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0 md:order-2">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -45,7 +51,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
               <div className="flex flex-col space-y-1 z-10">
                 <span className="text-AAsecondary text-base">Collaborative Design Studio for Development Sector</span>
                 <a href="https://lfastudio.life" target="_blank" rel="noopener noreferrer">
@@ -54,8 +60,8 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left text-sm md:text-base">
                   A collaborative <span className="text-AAsecondary">design studio for development sector leaders</span>.
                   Features <span className="text-AAsecondary">real-time multiplayer collaboration</span> with sub-100ms WebSockets,
                   live cursors and block locking. <span className="text-AAsecondary">AI-powered LFA suggestions</span> using
@@ -63,7 +69,7 @@ export default function SomethingIveBuilt() {
                   3-tier pricing with only 11 customers needed to break even.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-start">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-start">
                 <span className="pr-4 z-10">Next.js 14</span>
                 <span className="pr-4 z-10">FastAPI</span>
                 <span className="pr-4 z-10">React Flow</span>
@@ -93,8 +99,14 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0">
+          {/* Mobile thumbnail */}
+          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
+            <video src="/autistic.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -102,7 +114,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
               col-span-8 flex flex-col items-start md:items-end space-y-3">
               <div className="flex flex-col space-y-1 md:items-end z-10">
                 <span className="text-AAsecondary text-base">Zero-Cost Government Infrastructure</span>
@@ -112,8 +124,8 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left md:text-right">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left md:text-right text-sm md:text-base">
                   State-wide <span className="text-AAsecondary">multi-centre digital platform</span> for autism &amp; neurodiversity
                   support in government schools. Features <span className="text-AAsecondary">Digital Intake</span> with ability profiling,
                   <span className="text-AAsecondary"> IEP goal tracking</span>, session scheduling with conflict detection,
@@ -121,7 +133,7 @@ export default function SomethingIveBuilt() {
                   Built on zero-cost infrastructure with role-based access control.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-end">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-end">
                 <span className="pr-4 z-10">Next.js</span>
                 <span className="pr-4 z-10">FastAPI</span>
                 <span className="pr-4 z-10">Neon PostgreSQL</span>
@@ -149,8 +161,14 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
+          {/* Mobile thumbnail */}
+          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
+            <Img src={"/Karnataka Police.gif"} alt={"PRM Project"} className={`w-full h-full`} />
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0 md:order-2">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -158,7 +176,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
               <div className="flex flex-col space-y-1 z-10">
                 <span className="text-AAsecondary text-base">First Runner-up of Hack2skill Karnataka State Police Datathon 24</span>
                 <a href="https://github.com/Aakashdeep-Srivastava/PRM_Karnataka" target="_blank" rel="noopener noreferrer">
@@ -167,15 +185,15 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left text-sm md:text-base">
                   Built a <span className="text-AAsecondary">PowerBI dashboard</span> for police supervision,
                   optimizing resource management and crime tracking. Automated data updates with
                   <span className="text-AAsecondary"> Airtable</span>, reducing manual entry by 80% and enabling
                   5-minute decision cycles. <span className="text-AAsecondary">Ranked 2nd</span> out of 900 teams.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-start">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-start">
                 <span className="pr-4 z-10">PowerBI</span>
                 <span className="pr-4 z-10">Analytics</span>
                 <span className="pr-4 z-10">Airtable</span>
@@ -203,8 +221,14 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0">
+          {/* Mobile thumbnail */}
+          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
+            <video src="/SWAM.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -212,7 +236,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
               col-span-8 flex flex-col items-start md:items-end space-y-3">
               <div className="flex flex-col space-y-1 md:items-end z-10">
                 <span className="text-AAsecondary text-base">Agentic AI for Municipal Operations</span>
@@ -222,8 +246,8 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left md:text-right">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left md:text-right text-sm md:text-base">
                   Transforms static data directories into a <span className="text-AAsecondary">smart, context-aware workspace</span> for
                   municipal operations. Powered by <span className="text-AAsecondary">Gemini MCP multi-agent system</span> with 6
                   specialized agents — Operations, Finance, Plant, Asset Health, Workforce &amp; Policy.
@@ -231,7 +255,7 @@ export default function SomethingIveBuilt() {
                   auto-delegation, and financial calculator for panchayat-level budgeting.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-end">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-end">
                 <span className="pr-4 z-10">Gemini AI</span>
                 <span className="pr-4 z-10">MCP Agents</span>
                 <span className="pr-4 z-10">Next.js</span>
@@ -259,8 +283,14 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
+          {/* Mobile thumbnail */}
+          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
+            <Img src={"/edumate 2.png"} alt={"EduMate Project"} className={`w-full h-full`} />
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0 md:order-2">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -271,7 +301,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
               <div className="flex flex-col space-y-1 z-10">
                 <span className="text-AAsecondary text-base">Edumate</span>
                 <a href="https://edumate-demo.vercel.app" target="_blank" rel="noopener noreferrer">
@@ -280,15 +310,15 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left text-sm md:text-base">
                   Architected a <span className="text-AAsecondary">3D learning environment</span> with avatars and
                   <span className="text-AAsecondary"> real-time sign language recognition</span> (95% accuracy). Built
                   <span className="text-AAsecondary"> speech-to-image generation</span>, and canvas-based sketching,
                   enabling dynamic voice-to-drawing features with PocketBase backend.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-start">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-start">
                 <span className="pr-4 z-10">React3Fiber</span>
                 <span className="pr-4 z-10">Nextjs14</span>
                 <span className="pr-4 z-10">Node.js</span>
@@ -316,8 +346,14 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0">
+          {/* Mobile thumbnail */}
+          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
+            <Img src={"/ReachifyMe Go-To-Market Strategy.gif"} alt={"ReachifyMe Project"} className={`w-full h-full`} />
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -325,7 +361,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
               col-span-8 flex flex-col items-start md:items-end space-y-3">
               <div className="flex flex-col space-y-1 md:items-end z-10">
                 <span className="text-AAsecondary text-base">Winner of Product Space GenAI Hackathon</span>
@@ -335,8 +371,8 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left md:text-right">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left md:text-right text-sm md:text-base">
                 Led US market expansion strategy for ReachifyMe, creating
                   <span className="text-AAsecondary"> multi-channel acquisition plan</span> targeting 100+ paid users
                   at $14/month with <span className="text-AAsecondary">65% margins</span>. Reduced customer acquisition
@@ -344,7 +380,7 @@ export default function SomethingIveBuilt() {
                   podcasts and referral programs.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-end">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-end">
                 <span className="pr-4 z-10">Feedough</span>
                 <span className="pr-4 z-10">Extension</span>
                 <span className="pr-4 z-10">Market Research</span>
@@ -371,8 +407,14 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
+          {/* Mobile thumbnail */}
+          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
+            <Img src={"/dashboard.gif"} alt={"Trading Bot Project"} className={`w-full h-full`} />
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0 md:order-2">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -380,7 +422,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
               <div className="flex flex-col space-y-1 z-10">
                 <span className="text-AAsecondary text-base">Trading Analysis Copilot</span>
                 <a href="https://harsh903-trading-llm-chatbot-app-fhmeah.streamlit.app/" target="_blank" rel="noopener noreferrer">
@@ -389,14 +431,14 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left text-sm md:text-base">
                   Advanced trading platform with <span className="text-AAsecondary">AI-powered insights</span>. Features
                   include real-time market analysis, <span className="text-AAsecondary">technical indicators</span>, risk
                   assessment, and trading recommendations using <span className="text-AAsecondary">Meta-Llama-3.1-70B</span>.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-start">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-start">
                 <span className="pr-4 z-10">SambaNova Inference APIs</span>
                 <span className="pr-4 z-10">LLAMA405B</span>
                 <span className="pr-4 z-10">Agents</span>
@@ -425,8 +467,16 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0 overflow-hidden">
+          {/* Mobile thumbnail - phone mockup */}
+          <div className="md:hidden flex justify-center py-4 bg-AAprimary rounded-t-lg">
+            <div className="h-48 aspect-[9/16] rounded-xl overflow-hidden border border-AAsecondary/30 shadow-lg">
+              <video src="/metromind.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0 overflow-hidden">
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -434,7 +484,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
               col-span-8 flex flex-col items-start md:items-end space-y-3">
               <div className="flex flex-col space-y-1 md:items-end z-10">
                 <span className="text-AAsecondary text-base">AI-Powered City Intelligence</span>
@@ -444,15 +494,15 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left md:text-right">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left md:text-right text-sm md:text-base">
                   Built a <span className="text-AAsecondary">Progressive Web App</span> delivering real-time city intelligence
                   for Bengaluru. Features <span className="text-AAsecondary">multi-agent AI system</span> with Google Gemini,
                   interactive maps with <span className="text-AAsecondary">heat visualization</span>, and real-time dashboards
                   tracking traffic, AQI, and community reports.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-end">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-end">
                 <span className="pr-4 z-10">Next.js 15</span>
                 <span className="pr-4 z-10">TypeScript</span>
                 <span className="pr-4 z-10">Gemini AI</span>
@@ -477,8 +527,14 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
+          {/* Mobile thumbnail */}
+          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
+            <Img src={"/thalasscare.png"} alt={"ThalassCare AI Project"} className={`w-full h-full`} />
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0 md:order-2">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -486,7 +542,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start space-y-3 md:order-1">
               <div className="flex flex-col space-y-1 z-10">
                 <span className="text-AAsecondary text-base">Healthcare AI Solution</span>
                 <a href="https://dist-roan-three.vercel.app" target="_blank" rel="noopener noreferrer">
@@ -495,15 +551,15 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left text-sm md:text-base">
                   Mobile health app for <span className="text-AAsecondary">thalassemia patients</span> with
                   <span className="text-AAsecondary"> AI-driven health scores</span>, transfusion scheduling,
                   iron overload alerts, and <span className="text-AAsecondary">e-RaktKosh integration</span> for
                   real-time blood availability from 3,800+ centers. Serving 270M+ carriers worldwide.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-start">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-start">
                 <span className="pr-4 z-10">React Native</span>
                 <span className="pr-4 z-10">TypeScript</span>
                 <span className="pr-4 z-10">Expo</span>
@@ -530,8 +586,14 @@ export default function SomethingIveBuilt() {
             </div>
           </div>
 
-          <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-            <div className="absolute w-full h-full bg-opacity-70 z-0">
+          {/* Mobile thumbnail */}
+          <div className="md:hidden rounded-t-lg overflow-hidden aspect-video">
+            <video src="/udYAMIKA.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+          </div>
+
+          <div className="md:absolute md:py-4 md:grid md:grid-cols-12 w-full h-full content-center
+            rounded-b-lg md:rounded-none project-card md:!bg-none md:!border-0 md:!shadow-none">
+            <div className="hidden md:block absolute w-full h-full bg-opacity-70 z-0">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -539,7 +601,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
 
-            <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
+            <div className="px-6 py-6 md:px-8 md:pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5
               col-span-8 flex flex-col items-start md:items-end space-y-3">
               <div className="flex flex-col space-y-1 md:items-end z-10">
                 <span className="text-AAsecondary text-base">Team Shakti | IIT Madras</span>
@@ -549,8 +611,8 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10 project-description">
-                <p className="text-theme-primary md:text-theme-secondary text-left md:text-right">
+              <div className="w-full md:bg-AAtertiary rounded-md md:p-6 z-10 md:project-description">
+                <p className="text-theme-secondary text-left md:text-right text-sm md:text-base">
                   A revolutionary digital platform uplifting <span className="text-AAsecondary">rural &amp; urban women entrepreneurs</span>.
                   Features <span className="text-AAsecondary">Niti Sankalan</span> with AI eligibility checker for government schemes,
                   <span className="text-AAsecondary"> Gyaanvardhan</span> with gamified learning in regional languages,
@@ -559,7 +621,7 @@ export default function SomethingIveBuilt() {
                   Scalable across 13.96 lakh Anganwadi centres and 661 Navodaya Vidyalayas.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-theme-primary md:text-theme-secondary text-sm font-Text2 md:justify-end">
+              <ul className="flex flex-wrap w-full text-theme-secondary text-xs md:text-sm font-Text2 md:justify-end">
                 <span className="pr-4 z-10">Next.js</span>
                 <span className="pr-4 z-10">TypeScript</span>
                 <span className="pr-4 z-10">Tailwind CSS</span>
