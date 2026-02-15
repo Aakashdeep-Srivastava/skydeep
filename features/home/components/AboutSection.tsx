@@ -65,7 +65,7 @@ export default function AboutMe() {
 
           {/* Image Container - Centered on mobile */}
           <div className="lg:w-2/5 flex justify-center lg:justify-end">
-            <div className="relative group w-48 sm:w-64 md:w-72 lg:w-80 aspect-[3/4]">
+            <div className="relative group w-56 sm:w-72 md:w-80 lg:w-96 aspect-[3/4]">
               {/* Border Frame */}
               <div className="absolute inset-0 border-2 border-AAsecondary rounded-md
                             translate-x-3 translate-y-3 sm:translate-x-5 sm:translate-y-5

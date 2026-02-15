@@ -5,6 +5,7 @@ import { useThemeStore } from "@/stores/useThemeStore";
 export default function MyName(props: { finishedLoading: boolean }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [bgLoaded, setBgLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
   const { theme } = useThemeStore();
@@ -14,11 +15,24 @@ export default function MyName(props: { finishedLoading: boolean }) {
     setIsVideoOpen(true);
   }, []);
 
+  // Once modal mounts, play with audio
+  useEffect(() => {
+    if (!isVideoOpen) return;
+    const v = modalVideoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.currentTime = 0;
+    const p = v.play();
+    if (p) p.catch(() => {});
+  }, [isVideoOpen]);
+
   const closeVideo = useCallback(() => {
-    setIsVideoOpen(false);
-    if (modalVideoRef.current) {
-      modalVideoRef.current.pause();
+    const v = modalVideoRef.current;
+    if (v) {
+      v.pause();
+      v.muted = true;
     }
+    setIsVideoOpen(false);
   }, []);
 
   // Listen for open-reel event from SocialLinks
@@ -51,16 +65,20 @@ export default function MyName(props: { finishedLoading: boolean }) {
       className="relative min-h-[90vh] flex flex-col justify-center
       px-6 sm:px-8 md:px-16 lg:px-32 xl:px-56 2xl:px-72 py-20 sm:py-32 overflow-hidden"
     >
-      {/* Background Video — sketch-to-clear reveal on hover */}
+      {/* Background Video — lightweight version, sketch-to-clear reveal on hover */}
       <video
-        src="/Meshinig.mp4"
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
+        poster="/meshining-poster.webp"
+        onCanPlay={() => setBgLoaded(true)}
         className="absolute inset-0 w-full h-full object-cover z-0"
         style={{
-          opacity: isHovered ? (isLight ? 0.55 : 0.7) : (isLight ? 0.06 : 0.1),
+          opacity: bgLoaded
+            ? isHovered ? (isLight ? 0.55 : 0.7) : (isLight ? 0.06 : 0.1)
+            : 0,
           filter: isHovered
             ? "grayscale(0) contrast(1) brightness(1) blur(0px)"
             : isLight
@@ -68,7 +86,10 @@ export default function MyName(props: { finishedLoading: boolean }) {
               : "grayscale(1) contrast(1.6) brightness(0.6) blur(1px)",
           transition: "opacity 1s cubic-bezier(0.4, 0, 0.2, 1), filter 1.2s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
-      />
+      >
+        <source src="/meshining-bg.webm" type="video/webm" />
+        <source src="/meshining.mp4" type="video/mp4" />
+      </video>
 
       {/* Gradient Overlay — fades out on hover to reveal video */}
       <div
@@ -211,54 +232,89 @@ export default function MyName(props: { finishedLoading: boolean }) {
         </motion.div>
       </div>
 
-      {/* Fullscreen Video Modal */}
+      {/* Fullscreen Video Modal — Instagram-style slide-up */}
       <AnimatePresence>
         {isVideoOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md"
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/95"
             onClick={closeVideo}
           >
             {/* Close button */}
-            <button
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.2 }}
               onClick={closeVideo}
-              className="absolute top-6 right-6 z-[60] text-white/80 hover:text-white
-                         bg-white/10 hover:bg-white/20 rounded-full p-3
-                         transition-all duration-200 hover:scale-110"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[60] text-white/80 hover:text-white
+                         bg-white/10 hover:bg-white/20 rounded-full p-2.5 sm:p-3
+                         transition-all duration-200 active:scale-90"
               aria-label="Close video"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
-            </button>
+            </motion.button>
 
-            {/* Video Player — reel (9:16 portrait) size */}
+            {/* Video Player — slides up like Instagram reel */}
             <motion.div
-              initial={{ scale: 0.85, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="relative h-[85vh] max-h-[900px] aspect-[9/16] rounded-2xl overflow-hidden
-                         shadow-2xl ring-1 ring-white/10"
+              initial={{ y: "100%", opacity: 0.5 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "100%", opacity: 0 }}
+              transition={{
+                type: "spring",
+                damping: 30,
+                stiffness: 300,
+                mass: 0.8,
+              }}
+              className="relative w-full h-full sm:h-[90vh] sm:max-h-[900px] sm:w-auto sm:aspect-[9/16]
+                         sm:rounded-2xl overflow-hidden shadow-2xl sm:ring-1 sm:ring-white/10"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* Video — MP4 first for guaranteed audio compatibility */}
               <video
                 ref={modalVideoRef}
-                src="/Meshinig.mp4"
-                autoPlay
-                controls
+                loop
                 playsInline
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
+                poster="/meshining-poster.webp"
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/meshining.mp4" type="video/mp4" />
+                <source src="/meshining.webm" type="video/webm" />
+              </video>
 
-            {/* ESC hint */}
-            <span className="absolute bottom-6 text-white/40 text-xs font-mono">
-              Press ESC or click outside to close
-            </span>
+              {/* Tap to pause/play overlay */}
+              <div
+                className="absolute inset-0 z-10"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const v = modalVideoRef.current;
+                  if (v) {
+                    if (v.paused) v.play().catch(() => {});
+                    else v.pause();
+                  }
+                }}
+              />
+
+              {/* Bottom gradient for close hint */}
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/40 to-transparent
+                              pointer-events-none z-20" />
+
+              {/* ESC hint */}
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/50 text-xs font-mono
+                           pointer-events-none z-20"
+              >
+                <span className="hidden sm:inline">Press ESC or click outside to close</span>
+                <span className="sm:hidden">Tap to pause · Tap X to close</span>
+              </motion.span>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

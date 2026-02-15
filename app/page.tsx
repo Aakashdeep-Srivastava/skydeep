@@ -45,30 +45,26 @@ export default function Home() {
   const { sharedState, setSharedState } = useAppContext();
   const homeRef = useRef<HTMLDivElement>(null);
 
+  // Clean up event listeners once on mount
   useEffect(() => {
-    // Clean up event listeners from other pages
     if (sharedState.userdata.timerCookieRef.current) {
       clearInterval(sharedState.userdata.timerCookieRef.current);
     }
-    if (typeof window !== "undefined") {
-      if (sharedState.userdata.windowSizeTracker.current) {
-        window.removeEventListener("resize", sharedState.userdata.windowSizeTracker.current);
-      }
-      if (sharedState.userdata.mousePositionTracker.current) {
-        window.removeEventListener("mousemove", sharedState.userdata.mousePositionTracker.current, false);
-      }
-      if (sharedState.typing.eventInputLostFocus) {
-        window.removeEventListener("resize", sharedState.typing.eventInputLostFocus);
-      }
-      if (sharedState.typing.keyboardEvent) {
-        document.removeEventListener("keydown", sharedState.typing.keyboardEvent);
-      }
+    if (sharedState.userdata.windowSizeTracker.current) {
+      window.removeEventListener("resize", sharedState.userdata.windowSizeTracker.current);
     }
-    // Mark as loaded immediately
-    if (!sharedState.finishedLoading) {
-      setSharedState(prev => ({ ...prev, finishedLoading: true }));
+    if (sharedState.userdata.mousePositionTracker.current) {
+      window.removeEventListener("mousemove", sharedState.userdata.mousePositionTracker.current, false);
     }
-  }, [sharedState, setSharedState]);
+    if (sharedState.typing.eventInputLostFocus) {
+      window.removeEventListener("resize", sharedState.typing.eventInputLostFocus);
+    }
+    if (sharedState.typing.keyboardEvent) {
+      document.removeEventListener("keydown", sharedState.typing.keyboardEvent);
+    }
+    setSharedState(prev => prev.finishedLoading ? prev : { ...prev, finishedLoading: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const isProd = process.env.NODE_ENV === "production";
 
